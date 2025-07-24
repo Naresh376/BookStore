@@ -22,6 +22,7 @@ public class BookController {
     @GetMapping("/books")
     public List<Book> bookList() {
         List<Book> listOfBooks = bookService.getAllBooks();
+        log.info("Added additional changes .. ");
         return listOfBooks;
     }
 
