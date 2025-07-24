@@ -26,8 +26,8 @@ public class BookController {
 
     @PostMapping("/book")
     public Book createBook(@RequestBody Book book) {
-        String string = UUID.randomUUID().toString();
-        log.info("Generating unique ID for book: {}", string);
+        String isbn = UUID.randomUUID().toString();
+        log.info("Generating unique ID for book: {}", isbn);
         book.setIsbn(string);
         return bookService.saveBook(book);
     }
