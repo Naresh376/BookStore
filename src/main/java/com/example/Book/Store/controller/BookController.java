@@ -30,6 +30,7 @@ public class BookController {
     public Book createBook(@RequestBody Book book) {
         String isbn = UUID.randomUUID().toString();
         log.info("Generating unique ID for book: {}", isbn);
+        log.info("Simulating merge conflict resolution from remote branch");
         book.setIsbn(isbn);
         return bookService.saveBook(book);
     }
